@@ -1,2 +1,0 @@
-# mamp
-Amp Map
