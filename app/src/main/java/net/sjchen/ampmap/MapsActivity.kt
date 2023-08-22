@@ -2,6 +2,7 @@ package net.sjchen.ampmap
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
@@ -20,7 +21,8 @@ class MapsActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_maps)
 
-
+        val searchView = supportFragmentManager.findFragmentById(R.id
+            .idSearchView) as? SearchView
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
@@ -28,6 +30,28 @@ class MapsActivity : AppCompatActivity() {
         mapFragment?.getMapAsync{googleMap ->
             addMarkers(googleMap)
             googleMap.setInfoWindowAdapter(MarkerInfoWindowAdapter(this))}
+
+        searchView?.setOnQueryTextListener(object : SearchView
+            .OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                // 1. Get the query string
+                val queryString = query ?: return false
+
+                // 2. Get the list of matching chargers
+//                val chargerList = chargers.filter { charger ->
+//                    charger.stationName.contains(queryString, true)
+//                }
+
+                // 3. Update the map with the new list
+//                updateMap(chargerList)
+
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return false
+            }
+        })
 
     }
 
