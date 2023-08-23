@@ -12,5 +12,5 @@ utilize AWS Lambda to update the database with new data from NREL. REST API
 will be used to access the database from the app.
 
 ### Current Features
-[<img src="misc/img/AMP_Map_8-23-23.png" width="150"/>](misc/img/Amp_Map_8-23-23.png)
+[<img src="https://github.com/Sking56/mamp/blob/main/misc/img/Amp_Map_8-23-23.png" width="150"/>](misc/img/Amp_Map_8-23-23.png)
 
