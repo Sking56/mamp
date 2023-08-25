@@ -66,4 +66,6 @@ class MapsActivity : AppCompatActivity() {
             marker?.tag = charger
         }
     }
+
+    //TODO: Add function to filter search results by charger info
 }
